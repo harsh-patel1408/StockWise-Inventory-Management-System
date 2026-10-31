@@ -66,7 +66,7 @@ Each linked issue contains the full user-story text, acceptance criteria, priori
 
 ## 5. Use-case model
 
-The shop owner views dashboard, searches products, filters low stock, manages product and supplier records and views stock history. The stock assistant searches products, records IN/OUT and views movement history. Product creation includes SKU and non-negative validation; stock OUT includes balance validation. See the [single integrated editable Draw.io diagram](StockWise_Sprint2_Repo_Editable_Diagrams.drawio) and its [Mermaid version](SPRINT2_EDITABLE_DIAGRAMS.md).
+The shop owner views dashboard, searches products, filters low stock, manages product and supplier records and views stock history. The stock assistant searches products, records IN/OUT and views movement history. Product creation includes SKU and non-negative validation; stock OUT includes balance validation. See the [one-sheet editable Draw.io file containing all five diagram types](StockWise_Sprint2_Repo_Editable_Diagrams.drawio) and its [Mermaid version](SPRINT2_EDITABLE_DIAGRAMS.md).
 
 ## 6. UI wireframes and screen map
 
@@ -79,7 +79,7 @@ The shop owner views dashboard, searches products, filters low stock, manages pr
 | Stock movement | Product, IN/OUT, positive quantity, available balance, note, submit | US-14–US-17, US-19, US-22 |
 | Movement history | Timestamp, type, quantity, resulting balance, correction note | US-18, US-20, US-22 |
 
-The Word/PDF design pack contains one integrated system diagram and a six-screen wireframe specification table; it does not claim that separate full-fidelity wireframe mockups have been approved. All example stock numbers and products are illustrative, not live data.
+The final Word/PDF design pack contains a UML use-case diagram, six colour-coded low-fidelity wireframes, two user-flow diagrams, an activity swimlane diagram and a sequence diagram. These are proposed designs, not approved full-fidelity mockups. All example stock numbers and products are illustrative, not live data.
 
 ## 7. User flows
 
@@ -89,7 +89,7 @@ The Word/PDF design pack contains one integrated system diagram and a six-screen
 
 **Master data:** Enter product/supplier → validate required fields, SKU uniqueness and non-negative values → save; on attempted deletion check linked records and history → either delete safely or explain why blocked.
 
-The owner and assistant paths appear together in the [one integrated diagram](StockWise_Sprint2_Repo_Editable_Diagrams.drawio).
+The owner and assistant paths appear together in the [five labelled diagram sections on one editable sheet](StockWise_Sprint2_Repo_Editable_Diagrams.drawio).
 
 ## 8. Task board, ownership and evidence
 
@@ -138,3 +138,9 @@ Suggested 10-minute review: 1 minute project scope and team; 2 minutes personas/
 [3] GitHub, *StockWise repository, issues and Scrum Task Board*, accessed 31 October 2026.
 
 **AI assistance disclosure:** ChatGPT assisted in drafting and formatting the requirements/design documentation, diagrams and acceptance criteria, and in administering GitHub issues. All project assumptions, diagrams and stories require team verification. No unperformed testing, implementation or peer review is represented as completed. Team members remain responsible for accuracy, originality, compliance and their own contributions.
+
+## Final VIP diagram and report update (31 October 2026)
+
+The final downloadable submission package contains **one editable Draw.io file with one sheet and five labelled sections**, and a professional Word/PDF report with each diagram displayed as a separate figure. The five diagram types are: (1) UML use case with stick-figure actors and system boundary, (2) six colour-coded UI wireframes, (3) owner and assistant user-flow diagrams with decision paths, (4) stock-movement activity diagram with three swimlanes, and (5) UML-style stock-movement sequence diagram. The first three are **mandatory** under the Sprint 2 brief; the last two are **optional enhancements**. [Open editable diagram source](StockWise_Sprint2_Repo_Editable_Diagrams.drawio).
+
+**Submission boundary:** the local final Word/PDF and detailed Draw.io ZIP is supplied separately to the student. The GitHub connection has uploaded the Markdown documentation and editable GitHub Draw.io edition, but it has not uploaded the binary DOCX/PDF/ZIP attachments. Actual team peer-review approval and Moodle submission must still be completed by the student.
