@@ -67,3 +67,7 @@ Open [http://localhost:3000](http://localhost:3000). Alternatively use Node.js 2
 **Sprint 3 task issues:** [#61–#69](https://github.com/harsh-patel1408/StockWise-Inventory-Management-System/issues?q=is%3Aissue+label%3A%22Sprint+3%22). All assigned tasks remain open until their actual owners test/review and submit evidence.
 
 **Current limitations:** Database and browser integration have not been executed in this environment; dependencies could not be installed here. No completed CRUD, authentication or production deployment is claimed. Initial scaffold commits were made using the connected Harsh account with AI assistance, not by the other three members.
+
+## Sprint 3 local browser verification (separate starter package)
+
+The user ran a **separate** local Sprint 3 prototype against MariaDB 10.4.32 and supplied screenshots confirming the dashboard, products, suppliers and movements pages, along with five passing tests. This local package has 12 products / 4 suppliers / 17 movements, while the root repository scaffold has a different sample dataset. See [local verification and remaining gaps](docs/SPRINT3_LOCAL_TEST_RESULTS_2026-10-31.md). The exact locally tested source has **not** been merged into this repository; do not conflate the two codebases.
