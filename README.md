@@ -43,8 +43,8 @@ AI-assisted drafting was used for initial documentation and issue organisation. 
 ## Sprint 2 submission evidence
 
 - [Sprint 2 requirements and design submission report](docs/SPRINT2_SUBMISSION_REPORT.md)
-- [Editable draw.io diagrams](docs/StockWise_Sprint2_Repo_Editable_Diagrams.drawio)
-- [Editable Mermaid diagrams](docs/SPRINT2_EDITABLE_DIAGRAMS.md)
+- [One integrated editable Draw.io diagram](docs/StockWise_Sprint2_Repo_Editable_Diagrams.drawio)
+- [One integrated Mermaid diagram](docs/SPRINT2_EDITABLE_DIAGRAMS.md)
 - [Verified GitHub issues and story-number mapping](docs/SPRINT2_GITHUB_VERIFICATION.md)
 - [Design index](docs/SPRINT2_DESIGN_INDEX.md)
 
