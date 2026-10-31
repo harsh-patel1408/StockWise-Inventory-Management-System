@@ -39,3 +39,13 @@ Use GitHub Issues and the team's Project board to demonstrate requirements, prio
 
 ## Academic integrity
 AI-assisted drafting was used for initial documentation and issue organisation. The four-member team remains responsible for reviewing, understanding and approving the work, and for recording genuine contributions.
+
+## Sprint 2 submission evidence
+
+- [Sprint 2 requirements and design submission report](docs/SPRINT2_SUBMISSION_REPORT.md)
+- [Editable draw.io diagrams](docs/StockWise_Sprint2_Repo_Editable_Diagrams.drawio)
+- [Editable Mermaid diagrams](docs/SPRINT2_EDITABLE_DIAGRAMS.md)
+- [Verified GitHub issues and story-number mapping](docs/SPRINT2_GITHUB_VERIFICATION.md)
+- [Design index](docs/SPRINT2_DESIGN_INDEX.md)
+
+Sprint 2 is requirements and design work. Open Backlog issues are not implementation-completion evidence. The original 21 duplicate stories (#3–#23) were closed and replaced by Harsh-authored issues #40–#60.
