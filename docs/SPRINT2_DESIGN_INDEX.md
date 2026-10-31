@@ -4,6 +4,13 @@
 **Project:** StockWise — single-store inventory management  
 **Sprint 2 deadline:** 4 November 2026, 2:00 PM
 
+## Submission files and editable design source
+
+- [Sprint 2 submission report (Markdown)](SPRINT2_SUBMISSION_REPORT.md)
+- [Editable Mermaid diagrams: use cases, user flows, screen navigation and sequence](SPRINT2_EDITABLE_DIAGRAMS.md)
+- [Verified issue register and corrected issue-number mapping](SPRINT2_GITHUB_VERIFICATION.md)
+- The formatted Word/PDF report and full draw.io source are available in the separately prepared final submission package; they have **not** been committed as binary attachments to GitHub.
+
 ## Work items
 
 - **23 user stories**: issues `#40–#60` (US-01–US-21) and `#38–#39` (US-22–US-23). The former `#3–#23` were closed as duplicates after verified replacement.
