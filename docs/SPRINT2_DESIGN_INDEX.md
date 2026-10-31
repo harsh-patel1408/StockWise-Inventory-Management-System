@@ -6,7 +6,7 @@
 
 ## Work items
 
-- **23 user stories**: issues `#3–#23` (US-01–US-21) and `#38–#39` (US-22–US-23).
+- **23 user stories**: issues `#40–#60` (US-01–US-21) and `#38–#39` (US-22–US-23). The former `#3–#23` were closed as duplicates after verified replacement.
 - **14 design and planning tasks**: issues `#24–#37` (S2-01–S2-14).
 - Labels: `Sprint 2`, functional area and `priority:must`/`priority:should`.
 - All issue owners are from the original four-person Sprint 1 team.
