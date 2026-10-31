@@ -1,0 +1,18 @@
+extends layout
+block content
+  .heading-row
+    div
+      p.eyebrow CATALOGUE
+      h1 Products
+      p.muted Browse the seeded inventory records and find low-stock products.
+    span.pill= items.length + ' results'
+  section.panel
+    form.filters(method="get" action="/products")
+      label.sr-only(for="search") Search product name or SKU
+      input#search(type="search" name="search" value=search placeholder="Search product name or SKU")
+      label.check
+        input(type="checkbox" name="low" value="1" checked=low)
+        |  Low stock only
+      button.btn(type="submit") Apply filters
+      a.btn.btn-light(href="/products") Reset
+    include includes/product-table.pug

@@ -1,0 +1,58 @@
+extends layout
+block content
+  a.subtle-link(href="/products") ← Back to products
+  .heading-row
+    div
+      p.eyebrow PRODUCT RECORD
+      h1= product.name
+      p.muted SKU: #{product.sku}
+    if product.quantity <= product.reorder_level
+      span.tag.tag-warn Low stock
+    else
+      span.tag.tag-good Healthy
+  .two-cols
+    section.panel
+      .panel-heading
+        h2 Product details
+      dl.details
+        dt Quantity
+        dd= product.quantity + ' units'
+        dt Reorder level
+        dd= product.reorder_level
+        dt Unit price
+        dd= money(product.price)
+        dt Description
+        dd= product.description || '—'
+    section.panel
+      .panel-heading
+        h2 Linked supplier
+      dl.details
+        dt Name
+        dd= product.supplier_name || 'Unassigned'
+        dt Email
+        dd= product.supplier_email || '—'
+        dt Phone
+        dd= product.supplier_phone || '—'
+  section.panel
+    .panel-heading
+      h2 Product movement history
+      span.pill Latest 30
+    if history.length
+      .table-wrap
+        table
+          thead
+            tr
+              th Date
+              th Type
+              th Quantity
+              th Note
+          tbody
+            each m in history
+              tr
+                td= when(m.created_at)
+                td
+                  span(class=m.movement_type === 'IN' ? 'tag tag-good' : 'tag tag-warn')= m.movement_type
+                td= m.quantity
+                td= m.note || '—'
+    else
+      .empty No movement history for this product.

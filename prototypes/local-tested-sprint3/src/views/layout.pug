@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title #{title} | StockWise
+    link(rel="stylesheet" href="/static/css/style.css")
+  body
+    .shell
+      aside.sidebar
+        a.brand(href="/")
+          span.brand-mark SW
+          span StockWise
+        p.sidebar-caption INVENTORY WORKSPACE
+        nav(aria-label="Main navigation")
+          a(class=active === 'dashboard' ? 'nav-active' : '' href="/") ◫  Dashboard
+          a(class=active === 'products' || active === 'product-detail' ? 'nav-active' : '' href="/products") ▦  Products
+          a(class=active === 'suppliers' ? 'nav-active' : '' href="/suppliers") ♙  Suppliers
+          a(class=active === 'movements' ? 'nav-active' : '' href="/movements") ↔  Movements
+        .sidebar-bottom
+          span.pulse
+          |  Sprint 3 · Read-only prototype
+      main.main
+        header.topbar
+          .breadcrumb StockWise / #{title}
+          .user-badge Demo inventory workspace
+        .content
+          block content
+        footer.footer Built with Node.js · Express · Pug · MySQL | Sprint 3 prototype

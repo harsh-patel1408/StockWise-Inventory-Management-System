@@ -1,0 +1,33 @@
+extends layout
+block content
+  .heading-row
+    div
+      p.eyebrow AUDIT TRAIL
+      h1 Stock movement history
+      p.muted Read-only audit history of inventory IN and OUT movements.
+    span.pill Latest 100
+  section.panel
+    if items.length
+      .table-wrap
+        table
+          thead
+            tr
+              th Date
+              th Product
+              th SKU
+              th Type
+              th Quantity
+              th Note
+          tbody
+            each m in items
+              tr
+                td= when(m.created_at)
+                td
+                  a.product-link(href='/products/' + m.product_id)= m.product_name
+                td.mono= m.sku
+                td
+                  span(class=m.movement_type === 'IN' ? 'tag tag-good' : 'tag tag-warn')= m.movement_type
+                td.strong= m.quantity
+                td= m.note || '—'
+    else
+      .empty No movement records available.

@@ -1,0 +1,57 @@
+extends layout
+block content
+  .heading-row
+    div
+      p.eyebrow OVERVIEW
+      h1 Inventory dashboard
+      p.muted Real-time figures from your StockWise MySQL database.
+    a.btn(href="/products") View products →
+  .metrics
+    .metric
+      .metric-label Products
+      .metric-value= summary.totalProducts
+      .metric-note Unique catalogue records
+    .metric
+      .metric-label Total units
+      .metric-value= summary.totalUnits
+      .metric-note Units currently in stock
+    .metric.metric-alert
+      .metric-label Low-stock alerts
+      .metric-value= summary.lowStock
+      a.metric-note(href="/products?low=1") Review low stock →
+    .metric
+      .metric-label Inventory value
+      .metric-value= money(summary.stockValue)
+      .metric-note Based on product unit price
+  .two-cols
+    section.panel
+      .panel-heading
+        h2 Quick access
+        span.pill SPRINT 3
+      .quick-grid
+        a.quick(href="/products")
+          strong Product catalogue
+          span Search, filter and inspect stock
+        a.quick(href="/suppliers")
+          strong Supplier directory
+          span Contact and linked product records
+        a.quick(href="/movements")
+          strong Stock history
+          span Review dated IN / OUT entries
+        a.quick(href="/products?low=1")
+          strong Low-stock review
+          span Items at or below reorder level
+    section.panel
+      .panel-heading
+        h2 Recent movements
+        a.subtle-link(href="/movements") View all
+      if recent.length
+        each m in recent
+          .activity
+            span(class=m.movement_type === 'IN' ? 'movement-in' : 'movement-out')= m.movement_type
+            div
+              strong= m.product_name
+              small= when(m.created_at)
+            span.activity-qty= m.quantity + ' units'
+      else
+        .empty No stock movements recorded yet.

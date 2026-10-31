@@ -1,0 +1,29 @@
+if items.length
+  .table-wrap
+    table
+      thead
+        tr
+          th Product
+          th SKU
+          th Supplier
+          th Stock
+          th Reorder
+          th Price
+          th Status
+      tbody
+        each item in items
+          tr
+            td
+              a.product-link(href='/products/' + item.id)= item.name
+            td.mono= item.sku
+            td= item.supplier_name || 'Unassigned'
+            td.strong= item.quantity
+            td= item.reorder_level
+            td= money(item.price)
+            td
+              if item.quantity <= item.reorder_level
+                span.tag.tag-warn Low stock
+              else
+                span.tag.tag-good Healthy
+else
+  .empty No products match your filters.

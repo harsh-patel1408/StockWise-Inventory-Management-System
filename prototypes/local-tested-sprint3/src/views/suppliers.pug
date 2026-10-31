@@ -1,0 +1,30 @@
+extends layout
+block content
+  .heading-row
+    div
+      p.eyebrow PARTNERS
+      h1 Suppliers
+      p.muted Supplier records and their linked products from MySQL.
+    span.pill= items.length + ' suppliers'
+  section.panel
+    if items.length
+      .table-wrap
+        table
+          thead
+            tr
+              th Supplier
+              th Email
+              th Phone
+              th Address
+              th Products
+          tbody
+            each s in items
+              tr
+                td.strong= s.name
+                td= s.email || '—'
+                td= s.phone || '—'
+                td= s.address || '—'
+                td
+                  span.pill= s.product_count
+    else
+      .empty No suppliers available.
