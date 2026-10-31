@@ -7,8 +7,8 @@
 ## Submission files and editable design source
 
 - [Sprint 2 submission report (Markdown)](SPRINT2_SUBMISSION_REPORT.md)
-- [One integrated Mermaid diagram: use cases, user flows, screen navigation and sequence](SPRINT2_EDITABLE_DIAGRAMS.md)
-- [One integrated editable Draw.io diagram in repository](StockWise_Sprint2_Repo_Editable_Diagrams.drawio)
+- [Five diagram types and evidence map: use cases, user flows, screen navigation and sequence](SPRINT2_EDITABLE_DIAGRAMS.md)
+- [One editable Draw.io sheet with five diagram types in repository](StockWise_Sprint2_Repo_Editable_Diagrams.drawio)
 - [Verified issue register and corrected issue-number mapping](SPRINT2_GITHUB_VERIFICATION.md)
 - The formatted Word/PDF report and the original detailed draw.io source are available in the separately prepared final submission package; they have **not** been committed as binary attachments to GitHub. A separate editable draw.io version is committed above.
 
@@ -61,3 +61,5 @@
 
 ## Evidence status
 Initial report and editable draw.io source were prepared separately; **they have not yet been committed to this repository**. Do not mark their GitHub evidence complete until uploaded or linked and checked. The Project board may also require manual configuration because the current GitHub connection exposes issue-management actions but no Project-board field editing.
+
+**Sprint 2 design update:** [One-sheet editable Draw.io source](docs/StockWise_Sprint2_Repo_Editable_Diagrams.drawio) includes all three mandatory diagram types (use cases, wireframes, user flows) and both optional types (activity and sequence). See the [diagram evidence index](docs/SPRINT2_EDITABLE_DIAGRAMS.md). The final binary Word/PDF submission package is provided separately, not committed to this repository.
