@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  .page-heading
+    div
+      p.eyebrow SUPPLY CHAIN
+      h1 Suppliers
+      p.muted Contacts and linked products from MySQL.
+    span.pill Read-only Sprint 3
+  section.panel
+    .table-wrap
+      table
+        thead
+          tr
+            th Supplier
+            th Contact
+            th Email
+            th Phone
+            th Products
+        tbody
+          each s in suppliers
+            tr
+              td
+                strong= s.name
+              td= s.contact_name || '—'
+              td= s.email || '—'
+              td= s.phone || '—'
+              td
+                span.tag.good= s.product_count
+          if !suppliers.length
+            tr
+              td.empty(colspan="5") No suppliers found.
