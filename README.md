@@ -51,3 +51,19 @@ AI-assisted drafting was used for initial documentation and issue organisation. 
 Sprint 2 is requirements and design work. Open Backlog issues are not implementation-completion evidence. The original 21 duplicate stories (#3–#23) were closed and replaced by Harsh-authored issues #40–#60.
 
 **Sprint 2 design update:** [One-sheet editable Draw.io source](docs/StockWise_Sprint2_Repo_Editable_Diagrams.drawio) includes all three mandatory diagram types (use cases, wireframes, user flows) and both optional types (activity and sequence). See the [diagram evidence index](docs/SPRINT2_EDITABLE_DIAGRAMS.md). The final binary Word/PDF submission package is provided separately, not committed to this repository.
+
+## Sprint 3 — Working Prototype (31 October 2026)
+
+**Initial source code committed. This is not yet a tested or completed Sprint 3 submission.**
+
+The `main` branch now contains a Node.js + Express + Pug + MySQL **read-only** prototype scaffold with dashboard, product list/search, product details, supplier directory and movement history. It includes a relational MySQL schema, demo seed data and responsive CSS.
+
+**Run locally (Docker Desktop):**
+```bash
+docker compose up --build
+```
+Open [http://localhost:3000](http://localhost:3000). Alternatively use Node.js 20+, MySQL 8.4, `npm install`, `.env`, `db/schema.sql` and `db/seed.sql`. See the [Sprint 3 setup and smoke-test guide](docs/SPRINT3_SETUP.md).
+
+**Sprint 3 task issues:** [#61–#69](https://github.com/harsh-patel1408/StockWise-Inventory-Management-System/issues?q=is%3Aissue+label%3A%22Sprint+3%22). All assigned tasks remain open until their actual owners test/review and submit evidence.
+
+**Current limitations:** Database and browser integration have not been executed in this environment; dependencies could not be installed here. No completed CRUD, authentication or production deployment is claimed. Initial scaffold commits were made using the connected Harsh account with AI assistance, not by the other three members.
