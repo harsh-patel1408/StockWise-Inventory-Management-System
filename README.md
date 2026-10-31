@@ -43,9 +43,11 @@ AI-assisted drafting was used for initial documentation and issue organisation. 
 ## Sprint 2 submission evidence
 
 - [Sprint 2 requirements and design submission report](docs/SPRINT2_SUBMISSION_REPORT.md)
-- [One integrated editable Draw.io diagram](docs/StockWise_Sprint2_Repo_Editable_Diagrams.drawio)
-- [One integrated Mermaid diagram](docs/SPRINT2_EDITABLE_DIAGRAMS.md)
+- [One editable Draw.io sheet with five diagram types](docs/StockWise_Sprint2_Repo_Editable_Diagrams.drawio)
+- [Five diagram types and evidence map](docs/SPRINT2_EDITABLE_DIAGRAMS.md)
 - [Verified GitHub issues and story-number mapping](docs/SPRINT2_GITHUB_VERIFICATION.md)
 - [Design index](docs/SPRINT2_DESIGN_INDEX.md)
 
 Sprint 2 is requirements and design work. Open Backlog issues are not implementation-completion evidence. The original 21 duplicate stories (#3–#23) were closed and replaced by Harsh-authored issues #40–#60.
+
+**Sprint 2 design update:** [One-sheet editable Draw.io source](docs/StockWise_Sprint2_Repo_Editable_Diagrams.drawio) includes all three mandatory diagram types (use cases, wireframes, user flows) and both optional types (activity and sequence). See the [diagram evidence index](docs/SPRINT2_EDITABLE_DIAGRAMS.md). The final binary Word/PDF submission package is provided separately, not committed to this repository.
