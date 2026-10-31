@@ -8,8 +8,9 @@
 
 - [Sprint 2 submission report (Markdown)](SPRINT2_SUBMISSION_REPORT.md)
 - [Editable Mermaid diagrams: use cases, user flows, screen navigation and sequence](SPRINT2_EDITABLE_DIAGRAMS.md)
+- [Editable draw.io diagrams in repository](StockWise_Sprint2_Repo_Editable_Diagrams.drawio)
 - [Verified issue register and corrected issue-number mapping](SPRINT2_GITHUB_VERIFICATION.md)
-- The formatted Word/PDF report and full draw.io source are available in the separately prepared final submission package; they have **not** been committed as binary attachments to GitHub.
+- The formatted Word/PDF report and the original detailed draw.io source are available in the separately prepared final submission package; they have **not** been committed as binary attachments to GitHub. A separate editable draw.io version is committed above.
 
 ## Work items
 
