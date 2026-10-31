@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .page-heading
+    div
+      p.eyebrow INVENTORY AUDIT
+      h1 Stock movements
+      p.muted Dated transaction history stored in MySQL.
+    span.pill Read-only Sprint 3
+  section.panel
+    .table-wrap
+      table
+        thead
+          tr
+            th Date
+            th Product
+            th SKU
+            th Type
+            th Quantity
+            th Note
+        tbody
+          each m in movements
+            tr
+              td= m.created_at
+              td= m.product
+              td.code= m.sku
+              td
+                span(class=m.movement_type === 'IN' ? 'tag good' : 'tag danger')= m.movement_type
+              td= m.quantity
+              td= m.note || '—'
+          if !movements.length
+            tr
+              td.empty(colspan="6") No stock movements recorded.
