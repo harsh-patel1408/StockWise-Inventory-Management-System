@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  .page-heading
+    div
+      p.eyebrow PRODUCT DETAIL
+      h1= product.name
+      p.muted= product.sku
+    a.btn.secondary(href="/products") Back to products
+  .stat-grid
+    .stat-card
+      span.stat-label Current balance
+      strong= product.stock_quantity
+      span.stat-foot Units available
+    .stat-card
+      span.stat-label Reorder level
+      strong= product.reorder_level
+      span.stat-foot Minimum target
+    .stat-card
+      span.stat-label Unit price
+      strong £#{Number(product.price).toFixed(2)}
+      span.stat-foot Catalogue price
+    .stat-card
+      span.stat-label Stock status
+      if product.stock_quantity <= product.reorder_level
+        strong.alert-text Low
+      else
+        strong Healthy
+      span.stat-foot Compared with reorder level
+  .two-column
+    section.panel
+      .panel-head
+        h2 Product information
+      dl.detail-grid
+        dt Description
+        dd= product.description || '—'
+        dt Supplier
+        dd= product.supplier || 'Unassigned'
+        dt Supplier email
+        dd= product.supplier_email || '—'
+        dt SKU
+        dd= product.sku
+    section.panel
+      .panel-head
+        h2 Movement history
+      if movements.length
+        .activity-list
+          each m in movements
+            .activity-item
+              span(class=m.movement_type === 'IN' ? 'movement in' : 'movement out')= m.movement_type
+              div
+                strong #{m.quantity} units
+                small #{m.created_at} · #{m.note || 'No note'}
+      else
+        p.empty No movement history for this product.
