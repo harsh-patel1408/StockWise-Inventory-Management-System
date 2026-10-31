@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title #{title} · StockWise
+    link(rel="stylesheet" href="/styles.css")
+  body
+    .app-shell
+      aside.sidebar
+        a.brand(href="/")
+          span.brand-icon SW
+          span StockWise
+        p.sidebar-label WORKSPACE
+        nav(aria-label="Main navigation")
+          a(class=currentPath === '/' ? 'active' : '' href="/") Dashboard
+          a(class=currentPath.startsWith('/products') ? 'active' : '' href="/products") Products
+          a(class=currentPath === '/suppliers' ? 'active' : '' href="/suppliers") Suppliers
+          a(class=currentPath === '/movements' ? 'active' : '' href="/movements") Movements
+        .sidebar-footer
+          span.status-dot
+          |  Sprint 3 prototype
+          small Read-only demo
+      main.content
+        header.topbar
+          .breadcrumbs StockWise / #{title}
+          .topbar-right
+            span.pill Prototype
+            span.avatar SW
+        block content
+        footer.footer
+          span StockWise · CMP-L004-0
+          span © #{year} · Demonstration data only
