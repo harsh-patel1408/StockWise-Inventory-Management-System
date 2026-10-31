@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  .page-heading
+    div
+      p.eyebrow INVENTORY OVERVIEW
+      h1 Dashboard
+      p.muted Real-time overview from your MySQL inventory tables.
+    a.btn(href="/products") View products
+  .stat-grid
+    .stat-card
+      span.stat-label Total products
+      strong= stats.products
+      span.stat-foot Active catalogue items
+    .stat-card
+      span.stat-label Units in stock
+      strong= stats.units
+      span.stat-foot Across all products
+    .stat-card.warning
+      span.stat-label Low-stock alerts
+      strong= stats.low_stock
+      span.stat-foot At or below reorder level
+    .stat-card
+      span.stat-label Inventory value
+      strong £#{Number(stats.inventory_value).toFixed(2)}
+      span.stat-foot Based on current prices
+  .two-column
+    section.panel
+      .panel-head
+        div
+          h2 Low-stock products
+          p.muted Items requiring attention
+        a.text-link(href="/products?low=1") See all
+      if lowStock.length
+        .table-wrap
+          table
+            thead
+              tr
+                th Product
+                th On hand
+                th Reorder
+              tbody
+                each p in lowStock
+                  tr
+                    td
+                      a.table-link(href='/products/' + p.id)= p.name
+                      small= p.sku
+                    td
+                      span.tag.danger= p.stock_quantity
+                    td= p.reorder_level
+      else
+        p.empty No low-stock products at present.
+    section.panel
+      .panel-head
+        div
+          h2 Recent movements
+          p.muted Latest inventory activity
+        a.text-link(href="/movements") View history
+      if recent.length
+        .activity-list
+          each m in recent
+            .activity-item
+              span(class=m.movement_type === 'IN' ? 'movement in' : 'movement out')= m.movement_type
+              div
+                strong= m.product
+                small #{m.quantity} units · #{m.created_at}
+      else
+        p.empty No movements recorded.
