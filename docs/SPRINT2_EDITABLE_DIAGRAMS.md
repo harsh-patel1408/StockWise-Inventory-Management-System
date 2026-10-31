@@ -1,28 +1,15 @@
-# StockWise — one integrated Sprint 2 diagram
+# StockWise Sprint 2 — five diagram types in one editable Draw.io sheet
 
-This page contains **one** editable Mermaid diagram of the complete requirements and workflow, corresponding to the [single-page editable Draw.io file](StockWise_Sprint2_Repo_Editable_Diagrams.drawio). It includes the shop owner, stock assistant, key screens, validation, supplier/product updates, atomic stock movements and movement history. The diagram is a proposed design, not implementation evidence.
+**Updated 31 October 2026.** The final requirements-and-design submission contains all mandatory design artefacts and both optional UML-style diagrams. The editable GitHub edition is [one Draw.io file with one sheet](StockWise_Sprint2_Repo_Editable_Diagrams.drawio), organised into five labelled sections. The submission ZIP additionally contains the detailed editable master diagram and high-resolution images embedded in the final Word/PDF report.
 
-```mermaid
-flowchart TD
-  O["SHOP OWNER"] --> D["Dashboard and low-stock review"]
-  D --> P["Product catalogue and details"]
-  P --> S["Supplier directory and links"]
-  S --> MV{"Validate SKU, fields and linked deletion"}
-  MV --> Save["Save product / supplier master data"]
+| Section | Assessment requirement | Content |
+|---|---|---|
+| 01 | **Use case diagram — required** | UML actors Shop Owner and Stock Assistant; dashboard, product, supplier and movement use cases |
+| 02 | **Wireframes — required** | Six colour-coded screens: dashboard, products, product edit, suppliers, stock movement and history |
+| 03 | **User flow diagrams — required** | Owner low-stock flow and assistant IN/OUT flow with validation decisions |
+| 04 | Activity diagram — optional | Stock Assistant, StockWise Application and MySQL swimlanes; validation and transaction |
+| 05 | Sequence diagram — optional | Stock Assistant → Pug UI → Express/Node.js → MySQL request, transaction and response |
 
-  A["STOCK ASSISTANT"] --> Search["Search product by name / SKU"]
-  Search --> M["Record stock IN / OUT"]
-  M --> Q{"Positive whole-number quantity? OUT within balance?"}
-  Q -->|"Valid"| Atomic["Atomic stock update: movement + product balance"]
-  Q -->|"Invalid"| Err["Show error; no balance or history change"]
-  Err --> M
+**Personas and scenarios** are documented in [Sprint 2 submission report](SPRINT2_SUBMISSION_REPORT.md). The [verified issue register](SPRINT2_GITHUB_VERIFICATION.md) maps the full 23-story set to active GitHub issues #40–#60 and #38–#39; planning tasks #24–#37 remain tracked on the Scrum board.
 
-  Save --> Result["Current inventory, supplier links and dated movement history"]
-  Atomic --> Result
-
-  Rules["Shared rules: unique SKU; non-negative values; new product starts at zero; rollback on failure"] -.-> MV
-  Rules -.-> Q
-  Rules -.-> Atomic
-```
-
-The accompanying Word/PDF report includes the screen specification, acceptance criteria, story-to-screen traceability, user flows and validation details in text and tables. All user stories and task assignments are linked from the [submission report](SPRINT2_SUBMISSION_REPORT.md).
+**Design evidence only:** these diagrams do not demonstrate that code has been implemented, tests have passed, or the team has approved the design. Actual peer review and sign-off are outstanding.
