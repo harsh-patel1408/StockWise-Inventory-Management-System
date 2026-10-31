@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  section.panel.error-panel
+    p.eyebrow ERROR #{status}
+    h1= title
+    p.muted= message
+    a.btn(href="/") Return to dashboard
