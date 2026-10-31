@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  .page-heading
+    div
+      p.eyebrow PRODUCT CATALOGUE
+      h1 Products
+      p.muted Search and review products stored in MySQL.
+    span.pill Read-only Sprint 3
+  section.panel
+    form.filter-bar(method="get" action="/products")
+      label.sr-only(for="q") Search by product name or SKU
+      input#q(type="search" name="q" value=q placeholder="Search by product name or SKU")
+      label.check-label
+        input(type="checkbox" name="low" value="1" checked=low)
+        |  Low stock only
+      button.btn(type="submit") Apply filters
+      a.btn.secondary(href="/products") Clear
+    .table-wrap
+      table
+        thead
+          tr
+            th SKU
+            th Product
+            th Supplier
+            th Price
+            th In stock
+            th Status
+        tbody
+          each p in products
+            tr
+              td.code= p.sku
+              td
+                a.table-link(href='/products/' + p.id)= p.name
+              td= p.supplier || 'Unassigned'
+              td £#{Number(p.price).toFixed(2)}
+              td= p.stock_quantity
+              td
+                if p.stock_quantity <= p.reorder_level
+                  span.tag.danger Low stock
+                else
+                  span.tag.good Healthy
+          if !products.length
+            tr
+              td.empty(colspan="6") No products match these filters.
