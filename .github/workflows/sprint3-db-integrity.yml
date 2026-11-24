@@ -1,0 +1,47 @@
+name: Sprint 3 MySQL data and integrity checks
+on:
+  pull_request:
+    paths:
+      - 'db/**'
+      - 'scripts/load-demo-db.js'
+      - 'tests/db-integrity.test.js'
+      - '.github/workflows/sprint3-db-integrity.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-demo:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: demo_ci_password
+          MYSQL_DATABASE: stockwise
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -pdemo_ci_password"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=15
+    env:
+      DB_HOST: 127.0.0.1
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: demo_ci_password
+      DB_NAME: stockwise
+      STOCKWISE_DEMO_SETUP: '1'
+      STOCKWISE_DB_TEST: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install project dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Import schema and demo records twice (idempotence check)
+        run: |
+          node scripts/load-demo-db.js
+          node scripts/load-demo-db.js
+      - name: Run source and live MySQL tests
+        run: npm test
