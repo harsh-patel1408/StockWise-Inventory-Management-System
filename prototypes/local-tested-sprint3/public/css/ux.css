@@ -1,0 +1,61 @@
+:root {
+  --muted: #50657b;
+}
+
+.metric-note,
+.activity small,
+.empty,
+.details dt {
+  color: var(--muted);
+}
+
+th {
+  color: #4d6176;
+}
+
+.tag-warn {
+  color: #794611;
+}
+
+.tag-good {
+  color: #116049;
+}
+
+.details {
+  grid-template-columns: minmax(0, 35%) minmax(0, 1fr);
+}
+
+.details dd {
+  overflow-wrap: anywhere;
+}
+
+.filters {
+  align-items: end;
+}
+
+.search-field {
+  flex: 1 1 230px;
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.search-field label {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.filters input[type="search"] {
+  width: 100%;
+  min-width: 0;
+}
+
+.filters .check {
+  padding-block: 12px;
+}
+
+@media (max-width: 720px) {
+  .search-field {
+    flex-basis: 100%;
+  }
+}
