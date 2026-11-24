@@ -8,8 +8,9 @@ block content
     span.pill= items.length + ' results'
   section.panel
     form.filters(method="get" action="/products")
-      label.sr-only(for="search") Search product name or SKU
-      input#search(type="search" name="search" value=search placeholder="Search product name or SKU")
+      .search-field
+        label(for="search") Search product name or SKU
+        input#search(type="search" name="search" value=search)
       label.check
         input(type="checkbox" name="low" value="1" checked=low)
         |  Low stock only
