@@ -5,7 +5,7 @@ block content
       p.eyebrow CATALOGUE
       h1 Products
       p.muted Browse the seeded inventory records and find low-stock products.
-    span.pill= items.length + ' results'
+    span.pill #{items.length} #{items.length === 1 ? 'result' : 'results'}
   section.panel
     form.filters(method="get" action="/products")
       label.sr-only(for="search") Search product name or SKU

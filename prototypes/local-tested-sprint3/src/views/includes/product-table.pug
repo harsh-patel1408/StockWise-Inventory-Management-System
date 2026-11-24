@@ -1,15 +1,15 @@
 if items.length
-  .table-wrap
+  .table-wrap(tabindex="0" role="region" aria-label="Product catalogue")
     table
       thead
         tr
-          th Product
-          th SKU
-          th Supplier
-          th Stock
-          th Reorder
-          th Price
-          th Status
+          th(scope="col") Product
+          th(scope="col") SKU
+          th(scope="col") Supplier
+          th(scope="col") Stock
+          th(scope="col") Reorder
+          th(scope="col") Price
+          th(scope="col") Status
       tbody
         each item in items
           tr

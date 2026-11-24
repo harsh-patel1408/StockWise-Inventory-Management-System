@@ -6,6 +6,7 @@ html(lang="en")
     title #{title} | StockWise
     link(rel="stylesheet" href="/static/css/style.css")
   body
+    a.skip-link(href="#main-content") Skip to main content
     .shell
       aside.sidebar
         a.brand(href="/")
@@ -13,14 +14,22 @@ html(lang="en")
           span StockWise
         p.sidebar-caption INVENTORY WORKSPACE
         nav(aria-label="Main navigation")
-          a(class=active === 'dashboard' ? 'nav-active' : '' href="/") ◫  Dashboard
-          a(class=active === 'products' || active === 'product-detail' ? 'nav-active' : '' href="/products") ▦  Products
-          a(class=active === 'suppliers' ? 'nav-active' : '' href="/suppliers") ♙  Suppliers
-          a(class=active === 'movements' ? 'nav-active' : '' href="/movements") ↔  Movements
+          a(class=active === 'dashboard' ? 'nav-active' : '' aria-current=active === 'dashboard' ? 'page' : null href="/")
+            span(aria-hidden="true") ◫
+            |  Dashboard
+          a(class=active === 'products' || active === 'product-detail' ? 'nav-active' : '' aria-current=active === 'products' ? 'page' : active === 'product-detail' ? 'location' : null href="/products")
+            span(aria-hidden="true") ▦
+            |  Products
+          a(class=active === 'suppliers' ? 'nav-active' : '' aria-current=active === 'suppliers' ? 'page' : null href="/suppliers")
+            span(aria-hidden="true") ♙
+            |  Suppliers
+          a(class=active === 'movements' ? 'nav-active' : '' aria-current=active === 'movements' ? 'page' : null href="/movements")
+            span(aria-hidden="true") ↔
+            |  Movements
         .sidebar-bottom
           span.pulse
           |  Sprint 3 · Read-only prototype
-      main.main
+      main#main-content.main(tabindex="-1")
         header.topbar
           .breadcrumb StockWise / #{title}
           .user-badge Demo inventory workspace
