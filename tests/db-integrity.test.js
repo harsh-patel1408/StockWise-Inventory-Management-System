@@ -48,7 +48,7 @@ test('Sprint 3 MySQL demo data, joins, balances, and integrity (#62, #66)',
       });
       await t.test('foreign keys, CHECK constraints, and SKU uniqueness are installed', async () => {
         const [constraints] = await pool.query(`
-          SELECT constraint_name, constraint_type
+          SELECT CONSTRAINT_NAME AS constraint_name, CONSTRAINT_TYPE AS constraint_type
           FROM information_schema.table_constraints
           WHERE table_schema = DATABASE()
             AND table_name IN ('products', 'stock_movements')`);
