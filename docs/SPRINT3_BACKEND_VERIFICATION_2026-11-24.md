@@ -25,6 +25,8 @@ Install dependencies with `npm install` in `prototypes/local-tested-sprint3/`. I
 
 The route change forwards rejected asynchronous controller calls to the existing Express error middleware. The runtime checks covered both successful database requests and the failure path after stopping MariaDB.
 
+[Dashboard screenshot](evidence/sprint3-backend-2026-11-24/dashboard.png) · [Unknown-route screenshot](evidence/sprint3-backend-2026-11-24/not-found.png)
+
 ## Review and handover for #69
 
 - Issue #62 lists the smaller dataset used by the root prototype. For the prototype tested here, direct SQL returned 4 suppliers, 12 products, 17 movements and 5 low-stock products. Confirm which prototype the team will present before updating #62.
