@@ -35,17 +35,17 @@ block content
         dd= product.supplier_phone || '—'
   section.panel
     .panel-heading
-      h2 Product movement history
+      h2#product-history-heading Product movement history
       span.pill Latest 30
     if history.length
-      .table-wrap
+      .table-wrap(tabindex="0" role="region" aria-labelledby="product-history-heading")
         table
           thead
             tr
-              th Date
-              th Type
-              th Quantity
-              th Note
+              th(scope="col") Date
+              th(scope="col") Type
+              th(scope="col") Quantity
+              th(scope="col") Note
           tbody
             each m in history
               tr

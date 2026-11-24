@@ -5,18 +5,18 @@ block content
       p.eyebrow PARTNERS
       h1 Suppliers
       p.muted Supplier records and their linked products from MySQL.
-    span.pill= items.length + ' suppliers'
+    span.pill #{items.length} #{items.length === 1 ? 'supplier' : 'suppliers'}
   section.panel
     if items.length
-      .table-wrap
+      .table-wrap(tabindex="0" role="region" aria-label="Supplier directory")
         table
           thead
             tr
-              th Supplier
-              th Email
-              th Phone
-              th Address
-              th Products
+              th(scope="col") Supplier
+              th(scope="col") Email
+              th(scope="col") Phone
+              th(scope="col") Address
+              th(scope="col") Products
           tbody
             each s in items
               tr

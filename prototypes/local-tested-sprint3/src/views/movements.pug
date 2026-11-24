@@ -8,16 +8,16 @@ block content
     span.pill Latest 100
   section.panel
     if items.length
-      .table-wrap
+      .table-wrap(tabindex="0" role="region" aria-label="Stock movements")
         table
           thead
             tr
-              th Date
-              th Product
-              th SKU
-              th Type
-              th Quantity
-              th Note
+              th(scope="col") Date
+              th(scope="col") Product
+              th(scope="col") SKU
+              th(scope="col") Type
+              th(scope="col") Quantity
+              th(scope="col") Note
           tbody
             each m in items
               tr
